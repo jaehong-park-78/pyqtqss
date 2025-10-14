@@ -1,0 +1,330 @@
+* 
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    outline: 0;
+    font-family: "Segoe UI", "Arial Narrow", sans-serif; /* 모던한 폰트로 변경 */
+    font-size: 16px; /* 20pt 대신 더 표준적이고 현대적인 크기 */
+    font-weight: 500; /* 약간 가벼운 무게로 세련된 느낌 */
+    line-height: 1.5; /* 가독성을 위한 줄 간격 추가 */
+}
+
+/* Global Styles */
+QWidget {
+    background-color: #000000; /* 원본 색상 유지 */
+    color: #EAEAEA;
+    selection-background-color: #00A3FF;
+    selection-color: #EAEAEA;
+    border-radius: 8px; /* 더 부드러운 모서리 */
+    transition: background-color 0.2s ease; /* 부드러운 전환 효과 */
+}
+
+QWidget:disabled {
+    background-color: #121212;
+    color: #757575;
+    border: 1px solid #252A34; /* 미묘한 테두리 추가로 비활성화 상태 구분 */
+}
+
+/* ToolBar */
+QToolBar {
+    background: linear-gradient(135deg, #1E1E1E, #2B2B2B); /* 원본 그라디언트 유지 */
+    border-bottom: 1px solid #121212; /* 원본 테두리 색상 유지 */
+    padding: 6px; /* 패딩을 약간 늘려 여유롭게 */
+    spacing: 6px; /* 간격을 늘려 깔끔한 배치 */
+    border-radius: 6px; /* 부드러운 모서리 추가 */
+    transition: background-color 0.2s ease; /* 부드러운 전환 효과 */
+}
+
+/* Separator */
+QMainWindow::separator {
+ background-color: #252A34;
+width: 8px;
+ height: 8px; border-radius: 4px;
+ margin: 4px; 
+transition: background-color 0.2s ease; }
+
+/* ToolTip */
+QToolTip {
+    background-color: #00A3FF; /* 원본 색상 유지 */
+    color: #121212;
+    padding: 8px; /* 패딩 약간 증가로 여유롭게 */
+    border-radius: 10px; /* 더 부드러운 모서리 */
+    font-family: "Segoe UI", "Arial Narrow", sans-serif; /* 모던 폰트 추가 */
+    font-size: 14px;
+    font-weight: 600; /* bold 대신 수치로 명확히 */
+    border: 1px solid #1E1E1E; /* 미묘한 테두리 추가 */
+    transition: opacity 0.2s ease; /* 부드러운 툴팁 표시 효과 */
+}
+
+/* StatusBar */
+QStatusBar {
+    background: #2B2B2B; /* 원본 색상 유지 */
+    border: 1px solid #1E1E1E;
+    padding: 8px; /* 패딩 약간 증가 */
+    font-family: "Segoe UI", "Arial Narrow", sans-serif; /* 모던 폰트 추가 */
+    font-size: 14px;
+    font-weight: 500; /* 가독성을 위해 약간 가벼운 무게 */
+    color: #EAEAEA; /* 색상 명시적 추가 */
+}
+
+/* CheckBox and RadioButton */
+QCheckBox, QRadioButton {
+    color: #EAEAEA; /* 원본 색상 유지 */
+    padding: 6px; /* 패딩 약간 증가로 여유롭게 */
+    spacing: 8px; /* 아이템 간 간격 추가 */
+    font-family: "Segoe UI", "Arial Narrow", sans-serif; /* 모던 폰트 추가 */
+    font-size: 14px; /* 크기 명시적 추가 */
+    font-weight: 500;
+}
+
+QCheckBox:disabled, QRadioButton:disabled {
+    color: #757575; /* 원본 색상 유지 */
+    opacity: 0.7; /* 비활성화 시 시각적 구분 강화 */
+}
+
+/* GroupBox */
+QGroupBox {
+    font-family: "Segoe UI", "Arial Narrow", sans-serif; /* 모던 폰트 추가 */
+    font-weight: 600; /* bold 대신 명확한 수치 */
+    border: 1px solid #252A34; /* 원본 색상 유지 */
+    border-radius: 8px; /* 더 부드러운 모서리 */
+    padding: 10px; /* 패딩 약간 증가 */
+    margin-top: 12px; /* 상단 마진 조정 */
+    background-color: #1E1E1E; /* 미묘한 배경 추가 */
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    padding: 6px 10px; /* 패딩 증가로 깔끔한 배치 */
+    font-family: "Segoe UI", "Arial Narrow", sans-serif; /* 모던 폰트 추가 */
+    font-size: 16px;
+    font-weight: 600;
+    color: #EAEAEA; /* 색상 명시적 추가 */
+    background-color: #252A34; /* 배경 색상으로 통일성 강화 */
+    border-radius: 4px; /* 부드러운 모서리 */
+}
+
+/* MenuBar & Menu */
+QMenuBar, QMenu {
+    background: linear-gradient(135deg, #1E1E1E, #2B2B2B); /* 원본 그라디언트 유지 */
+    color: #EAEAEA;
+    padding: 8px; /* 패딩 약간 증가로 여유롭게 */
+    border-radius: 8px; /* 더 부드러운 모서리 */
+    font-family: "Segoe UI", "Arial Narrow", sans-serif; /* 모던 폰트 추가 */
+    font-size: 14px; /* 크기 명시적 추가 */
+    font-weight: 500; /* 가독성을 위해 약간 가벼운 무게 */
+}
+
+QMenu::item {
+    padding: 10px 16px; /* 패딩 증가로 깔끔한 배치 */
+    border-radius: 4px;
+    transition: background-color 0.2s ease; /* 부드러운 전환 효과 */
+}
+
+QMenu::item:selected {
+    background-color: #00A3FF; /* 원본 색상 유지 */
+    color: #121212;
+}
+
+/* ScrollBar */
+QScrollBar:vertical, QScrollBar:horizontal {
+    background-color: #1A1A2E; /* 원본 색상 유지 */
+    border-radius: 6px;
+    margin: 4px; /* 여백 추가로 깔끔한 배치 */
+}
+
+QScrollBar::handle {
+    background: #00A3FF; /* 원본 색상 유지 */
+    border-radius: 6px;
+    min-height: 20px; /* 수직 스크롤바 최소 높이 */
+    min-width: 20px; /* 수평 스크롤바 최소 너비 */
+    transition: background-color 0.2s ease; /* 부드러운 전환 효과 */
+}
+
+QScrollBar::add-line, QScrollBar::sub-line {
+    background: #252A34; /* 일관성 위해 색상 추가 */
+    border-radius: 4px;
+}
+
+QScrollBar::add-page, QScrollBar::sub-page {
+    background: #1A1A2E; /* 원본 색상 유지 */
+}
+
+/* Text & Line Edit */
+QTextEdit, QPlainTextEdit, QLineEdit {
+    background-color: #1A1A2E; /* 원본 색상 유지 */
+    color: #EAEAEA;
+    border: 1px solid #252A34;
+    border-radius: 8px;
+    padding: 8px; /* 패딩 약간 증가 */
+    font-family: "Segoe UI", "Arial Narrow", sans-serif; /* 모던 폰트 추가 */
+    font-size: 14px; /* 크기 명시적 추가 */
+    font-weight: 500;
+    transition: border-color 0.2s ease; /* 부드러운 전환 효과 */
+}
+
+QTextEdit:focus, QPlainTextEdit:focus, QLineEdit:focus {
+    border: 2px solid #00A3FF; /* 포커스 시 강조 */
+}
+
+/* Table Widget */
+QTableWidget {
+    background-color: #1A1A2E; /* 원본 색상 유지 */
+    color: #EAEAEA;
+    border: 1px solid #455364;
+    gridline-color: #455364;
+    border-radius: 8px;
+    font-family: "Segoe UI", "Arial Narrow", sans-serif; /* 모던 폰트 추가 */
+    font-size: 14px; /* 가독성을 위한 크기 명시 */
+    font-weight: 500;
+}
+
+QTableWidget::item {
+    padding: 8px; /* 패딩 약간 증가로 여유롭게 */
+    transition: background-color 0.2s ease; /* 부드러운 전환 효과 */
+}
+
+QTableWidget::item:selected {
+    background-color: #00A3FF; /* 원본 색상 유지 */
+    color: #121212;
+    border-radius: 4px;
+}
+
+/* Header View */
+QHeaderView::section {
+    background: #252A34; /* 원본 색상 유지 */
+    color: #EAEAEA;
+    padding: 8px; /* 패딩 약간 증가 */
+    border: 1px solid #1E1E1E; /* 테두리 명확히 */
+    border-radius: 4px;
+    font-family: "Segoe UI", "Arial Narrow", sans-serif; /* 모던 폰트 추가 */
+    font-size: 14px;
+    font-weight: 600; /* 약간 굵게 */
+}
+
+/* CheckBox & RadioButton Indicator */
+QCheckBox::indicator, QRadioButton::indicator {
+    width: 20px; /* 크기 약간 축소로 세련미 */
+    height: 20px;
+    border: 2px solid #14D790; /* 원본 색상 유지 */
+    border-radius: 50%;
+    background: transparent;
+    transition: background-color 0.2s ease; /* 부드러운 전환 효과 */
+}
+
+QCheckBox::indicator:checked, QRadioButton::indicator:checked {
+    background-color: #14D790; /* 원본 색상 유지 */
+    border: 2px solid #14D790;
+}
+
+/* Hover & Focus Effects */
+QWidget:hover, QPushButton:hover, QToolButton:hover,
+QCheckBox:hover, QRadioButton:hover, QAbstractItemView:hover {
+    background-color: rgba(0, 163, 255, 0.2); /* #00A3FF 기반 투명 호버 효과 */
+    transition: background-color 0.2s ease; /* 부드러운 전환 */
+}
+
+QLineEdit:focus, QComboBox:focus, QTextEdit:focus,
+QPlainTextEdit:focus, QSlider:focus, QAbstractItemView:focus {
+    border: 2px solid #00A3FF; /* 원본 색상 유지 */
+    transition: border-color 0.2s ease; /* 부드러운 전환 */
+}
+
+/* Buttons */
+QPushButton {
+    color: #EAEAEA;
+    border-radius: 28px;
+    padding: 8px 16px;
+    border: 2px solid #00A3FF;
+    font-size: 28px;
+    width: 250px;  /* 고정된 너비 설정 */
+    height: 50px;  /* 고정된 높이 설정 */
+text-align:left;
+
+}
+
+QPushButton:hover {
+    background-color:#00A3FF;;
+    border-color: #111111;
+    color: #121212;
+}
+
+
+
+QPushButton:pressed {
+    background-color: #008CBA;
+}
+
+/* ProgressBar */
+QProgressBar {
+    border: 2px solid #1E90FF;
+    border-radius: 8px;
+    background-color: #1E1E1E;
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 16px;
+}
+
+QProgressBar::chunk {
+    background-color: #14D790; /* 초록색 */
+    border-radius: 8px;
+}
+
+QProgressDialog QPushButton {
+    width: auto;  /* 크기 자동 조정 */
+    height: auto; /* 크기 자동 조정 */
+    min-width: 20px;  /* 최소 너비 설정 */
+    min-height: 20px;  /* 최소 높이 설정 */
+font: 75 10pt "Arial Narrow";
+background-color: #1A1A2E;
+}
+
+QWidget:hover {
+    background-color: transparent; /* 배경색 제거 */
+}
+
+QPushButton:hover {
+	background-color: rgba(255, 255, 255,0.2);
+    color: #EAEAEA; /* 텍스트 색상 유지 */
+}
+
+
+/* Tab Widget */
+QTabWidget {
+    color: #FFFFFF; /* #000000에서 #FFFFFF로 변경 (원본 탭바와 조화) */
+    background-color: #000000; /* 원본 색상 유지 */
+    font-family: "Segoe UI", "Arial Narrow", sans-serif; /* 모던 폰트 추가 */
+    font-size: 14px; /* 가독성을 위한 크기 */
+    font-weight: 500;
+}
+
+QTabWidget::pane {
+    border: 1px solid #252A34; /* 원본에서 누락된 테두리 색상 추가 (이전 스타일 참조) */
+    background-color: #000000; /* 원본 색상 유지 */
+    border-radius: 8px; /* 6px에서 늘려 부드러운 모서리 */
+}
+
+/* Tab Bar */
+QTabBar::tab {
+    background-color: #000000; /* 원본 색상 유지 */
+    color: #808086; /* 원본 색상 유지 */
+    padding: 8px 16px; /* 패딩 증가로 여유로운 배치 */
+    margin: 4px; /* 마진 조정으로 깔끔한 간격 */
+    border: none; /* 불필요한 테두리 제거 */
+    border-radius: 6px; /* 부드러운 모서리 추가 */
+    font-family: "Segoe UI", "Arial Narrow", sans-serif; /* 모던 폰트 추가 */
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease; /* 부드러운 전환 효과 */
+}
+
+QTabBar::tab:selected, QTabBar::tab:hover {
+    background-color: #1E1E1E; /* 미묘한 배경 변화로 선택/호버 강조 */
+    color: #FFFFFF; /* 원본 색상 유지 */
+    border-bottom: 2px solid #00A3FF; /* 원본 테두리 색상 유지 */
+    padding: 8px 16px;
+    margin: 4px;
+    border-radius: 6px;
+}
