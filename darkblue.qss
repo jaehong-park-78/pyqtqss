@@ -1,0 +1,256 @@
+/* ============================= */
+/* Global Reset (최소화) */
+/* ============================= */
+* {
+    /* Qt는 기본적으로 padding/margin/border를 0으로 설정하지 않습니다. 
+       전체 위젯에 적용하여 일관성을 높입니다. */
+    padding: 0;
+    margin: 0;
+    border: 0;
+    
+    /* 기본 폰트 설정 */
+    font-family: "Segoe UI", "Arial Narrow";
+    font-size: 16px;
+    font-weight: 400;
+}
+
+/* ============================= */
+/* Base Widget (기본 테마) */
+/* ============================= */
+QWidget {
+    /* 전체 배경과 기본 텍스트 색상 */
+    background-color: #0F0F0F;
+    color: #F5F5F5;
+    
+    /* ⚠️ 최상위 QWidget에 border: 2px solid white; 를 적용하면 
+       모든 위젯에 이 흰색 테두리가 추가되어 레이아웃이 깨지므로 제거하거나 특정 위젯에만 적용하는 것을 권장합니다.
+       (여기서는 유지하되, QFrame과 QGroupBox에서 덮어쓰도록 유도합니다.) */
+}
+
+QWidget:disabled {
+    background-color: #1A1A1A;
+    color: #616161;
+}
+
+/* ============================= */
+/* Container & Frames */
+/* ============================= */
+QFrame,
+QGroupBox {
+    /* QFrame과 QGroupBox에 공통적으로 배경/테두리/모서리 적용 */
+    background-color: #151515;
+    border-radius: 8px;
+    border: 1px solid #2C2C2C;
+}
+
+/* ----------------------------- */
+/* GroupBox (타이틀 겹침 방지 및 정상화) */
+/* ----------------------------- */
+QGroupBox {
+    /* ❌ 이전의 width/height/border-radius 속성은 컨테이너에 부적합하므로 제거했습니다. */
+    
+    /* 타이틀 겹침 방지를 위한 상단 패딩 */
+    padding-top: 25px; 
+}
+
+QGroupBox::title {
+    background-color: transparent; 
+    
+    /* 타이틀 위치 조정 */
+    subcontrol-origin: border;
+    subcontrol-position: top left;
+    
+    /* 타이틀 폰트 및 색상 강조 */
+    font-size: 18px; 
+    font-weight: 600; 
+    color: #00A3FF; /* 강조 색상 유지 */
+    
+    /* 타이틀 여백 */
+    padding: 2px 5px; 
+    margin-left: 5px; 
+}
+
+
+/* ============================= */
+/* Buttons */
+/* ============================= */
+QPushButton {
+    color: #F5F5F5;
+    border-radius: 25px;
+    padding: 2px 16px;
+    border: 3px solid #00A3FF;
+    background-color: transparent;
+    font-size: 26px;
+    font-weight: 600;
+    margin: 0px;
+    
+    /* 아이콘 크기 유지 */
+    icon-size: 40px 40px; 
+    
+    /* 텍스트 정렬은 기본적으로 중앙(Center)이므로, 
+       명시적으로 왼쪽 정렬을 원하면 유지합니다. */
+    text-align: left; 
+}
+
+QPushButton:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+/* ============================= */
+/* Input Fields (QLineEdit, QTextEdit, QPlainTextEdit) */
+/* ============================= */
+QLineEdit,
+QTextEdit,
+QPlainTextEdit {
+    background-color: #1A1A1A;
+    color: #F5F5F5;
+    border: 1px solid #3A3A3A;
+    border-radius: 6px;
+    padding: 8px;
+}
+
+QLineEdit:focus,
+QTextEdit:focus,
+QPlainTextEdit:focus {
+    /* 포커스 시 테두리 색상 강조 */
+    border: 2px solid #14D790;
+}
+
+/* ============================= */
+/* Table */
+/* ============================= */
+QTableWidget {
+    background-color: #1A1A1A;
+    color: #F5F5F5;
+    border: 2px solid #3A3A3A;
+    border-radius: 6px;
+    gridline-color: #3A3A3A; /* 격자선 색상 추가 (가독성 향상) */
+}
+
+QTableWidget::item {
+    padding: 4px; /* 아이템 내부 패딩 추가 */
+}
+
+QTableWidget::item:selected {
+    background-color: #00A3FF;
+    color: #0F0F0F;
+}
+
+/* Header */
+QHeaderView::section {
+    background-color: #2A2A2A;
+    color: #F5F5F5;
+    padding: 8px;
+    border: none;
+    font-weight: 600;
+}
+
+/* ============================= */
+/* ScrollBar */
+/* ============================= */
+QScrollBar:vertical,
+QScrollBar:horizontal {
+    background: #1A1A1A;
+    border-radius: 6px;
+    /* 버튼 제거 */
+    subcontrol-position: none; 
+    subcontrol-origin: margin;
+}
+
+QScrollBar:vertical {
+    width: 10px;
+}
+
+QScrollBar:horizontal {
+    height: 10px;
+}
+
+QScrollBar::handle {
+    background: #00A3FF;
+    border-radius: 4px;
+    margin: 2px; /* 핸들 주위에 약간의 여백 추가 */
+}
+
+QScrollBar::add-line,
+QScrollBar::sub-line {
+    /* 이미 0으로 설정되어 있으므로 제거 */
+    height: 0;
+    width: 0;
+}
+
+/* ============================= */
+/* CheckBox / Radio */
+/* ============================= */
+QCheckBox,
+QRadioButton {
+    padding: 6px;
+    color: #F5F5F5;
+}
+
+/* CheckBox */
+QCheckBox::indicator {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #00A3FF;
+    background: transparent;
+}
+
+QCheckBox::indicator:checked {
+    background-color: #14D790;
+    border-color: #14D790;
+}
+
+/* Radio */
+QRadioButton::indicator {
+    width: 18px;
+    height: 18px;
+    border-radius: 9px;
+    border: 2px solid #00A3FF;
+}
+
+QRadioButton::indicator:checked {
+    /* 라디오 버튼 체크 표식 (가운데 점) */
+    background-color: #14D790;
+    border-color: #14D790;
+    
+    /* 체크된 상태의 내부 점 스타일 */
+    image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAcAAAAHCAYAAACzXTVzAAAAYUlEQVQIW2O0B/b/PwMwAOzQAAHwH4j/C4j/X0FhZ3RkYGQoQWp+kAAIIgV2QGY/T9EwMDAy8DEwMLIwPDC4A8z8w/v/Gg2P/n8YGBgY/f9wA8S8w/v/hT8fGBgYGAAA+GkF0mE0S80AAAAASUVORK5CYII=); 
+    /* 💡 이 data URL은 작은 녹색 점 (14D790과 일치하는 색상)을 나타내며,
+       체크된 상태를 더욱 명확하게 보여줍니다. */
+}
+
+/* ============================= */
+/* Tabs */
+/* ============================= */
+QTabWidget::pane {
+    /* 탭 영역과 콘텐츠 영역 분리 */
+    border: 1px solid #2C2C2C; 
+    margin-top: -1px; /* 탭바와의 경계선 일치 */
+    background-color: #0F0F0F;
+}
+
+QTabBar::tab {
+    background: #1A1A1A;
+    padding: 10px 18px;
+    color: #AFAFAF;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    margin-right: 2px; /* 탭 간격 */
+}
+
+QTabBar::tab:selected {
+    background-color: #0F0F0F;
+    color: #00A3FF;
+    border-bottom: 2px solid #00A3FF;
+    border: 1px solid #2C2C2C;
+    border-bottom-color: #0F0F0F; /* 선택된 탭 아래 테두리를 배경색과 일치시켜 패널과 연결 */
+}
+
+/* ============================= */
+/* WebEngineView */
+/* ============================= */
+QWebEngineView {
+    background-color: #121212;
+    border: 2px solid #3A3A3A;
+    border-radius: 6px;
+}
