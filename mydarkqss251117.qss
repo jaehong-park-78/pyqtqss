@@ -73,7 +73,7 @@ QPushButton {
     margin: 5px; 
     
     icon-size: 60px 60px; 
-    text-align: center;
+    text-align: left;
 }
 
 QPushButton:hover {
