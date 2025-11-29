@@ -73,7 +73,7 @@ QPushButton {
     font-weight: 700; 
     margin: 5px; 
     
-    icon-size: 60px 60px; 
+    icon-size: 40px 40px; 
     text-align: left;
 }
 
